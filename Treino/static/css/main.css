@@ -1,0 +1,46 @@
+body, html {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: lightblue;
+    height: 60%;  /* Garante que o body tenha 100% da altura da tela */
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;  /* Centraliza verticalmente */
+}
+
+.atestados { 
+    max-height: 50vh;
+    overflow-y: auto;
+} 
+
+header {
+    font-size: x-large;
+}
+
+.container {
+    margin: 0 auto;
+    margin-top: 120px;
+    width: 80%;  /* Ajusta o tamanho da .content */
+    max-width: 800px;  /* Impede que o conteúdo ultrapasse 800px de largura */
+    text-align: center;  /* Centraliza o conteúdo dentro da .content */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;  /* A tabela ocupa toda a largura da .content */
+    margin: 0 auto;  /* Centraliza a tabela dentro de .content */
+}
+
+table, td, th {
+    border: 1px solid #aaa;
+    padding: 20px;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;  /* Centraliza o conteúdo da tabela */
+    padding: 8px
+}

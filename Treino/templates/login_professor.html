@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"
+</head>
+<body>
+    <section class="login">
+        <h1>Login do Professor</h1>
+        <form action="/auth/professor" method="POST" accept-charset="UTF-8">
+    
+            <h3>Senha</h3>
+            <input type="password", name="password" required><br>
+
+            <input type="submit", name="Enviar"><br>
+            <a href="{{ url_for('auth.login') }}"> Área do Aluno </a>
+        </form>
+    </section>
+</body>
+</html>

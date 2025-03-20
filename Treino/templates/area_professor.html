@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/prof.css') }}">
+</head>
+<body>
+    <header class="topnav">
+        <div class="search-container">
+            <form action="/professor/index" method="POST" accept-charset="UTF-8">
+                <input type="text" placeholder="Pesquisar RA" name="Pesquisar">
+                <button type="submit"> <i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        
+        <a href="{{ url_for('auth.login') }}">Sair</a> 
+    </header>
+    
+    <section class="resultado-pesquisa">
+        {% for usuario in usuarios %}
+            {% for atestado in usuario %}
+                {% if "atestado" in atestado %}
+                    <article class="item-pesquisa">
+                        <h3>Nome: {{ usuario.username }}</h3>
+                        <h3>RA: {{ usuario.RA }}</h3>
+                        <h3>Status: {{ usuario[atestado].status }}</h3>
+                        <a href="{{ url_for('professor.abrir_pdf', pdf=usuario[atestado].pdf) }}" target="_blank">Abrir PDF</a>
+                    </article>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </section>
+</body>
+</html>
